@@ -3,9 +3,9 @@ HW01_test: Testing triangle classification HW01
 Author: Xinyi Ye
 Date: 01/27/2020
 """
-from hw01_xinyi_ye import classify_triangle
 import unittest
 import math
+from hw01_xinyi_ye import classify_triangle
 
 
 class BuggyTriangleTest(unittest.TestCase):
@@ -14,25 +14,28 @@ class BuggyTriangleTest(unittest.TestCase):
     def test_classify_triangle(self):
         """ test HW01 classify_triangle() function"""
 
-        t1 = classify_triangle(4, 4, 4)
-        t2 = classify_triangle(2.768, 2.768, 2.768)
-        t3 = classify_triangle(2.0, 2, 2)
+        t1_test = classify_triangle(4, 4, 4)
+        t2_test = classify_triangle(2.768, 2.768, 2.768)
+        t3_test = classify_triangle(2.0, 2, 2)
         self.assertTrue(
-            t1 == t2 == t3 == 'this triangle is equilateral and it is not a right triangle')
+            t1_test == t2_test == t3_test ==
+            'this triangle is equilateral and it is not a right triangle')
 
-        t4 = classify_triangle(2.1, 3, 2.1)
-        t5 = classify_triangle(2.1, 2.1, 3)
-        t6 = classify_triangle(3, 2.1, 2.1)
-        t7 = classify_triangle(3.0, 3, 2.7)
+        t4_test = classify_triangle(2.1, 3, 2.1)
+        t5_test = classify_triangle(2.1, 2.1, 3)
+        t6_test = classify_triangle(3, 2.1, 2.1)
+        t7_test = classify_triangle(3.0, 3, 2.7)
         self.assertTrue(
-            t4 == t5 == t6 == t7 == 'this triangle is isosceles and it is not a right triangle')
+            t4_test == t5_test == t6_test == t7_test ==
+            'this triangle is isosceles and it is not a right triangle')
 
-        t8 = classify_triangle(math.sqrt(2), math.sqrt(2), 2)
-        t9 = classify_triangle(math.sqrt(2), 2, math.sqrt(2))
-        t10 = classify_triangle(2, math.sqrt(2), math.sqrt(2))
-        t11 = classify_triangle(math.sqrt(8), math.sqrt(8), 4)
+        t8_test = classify_triangle(math.sqrt(2), math.sqrt(2), 2)
+        t9_test = classify_triangle(math.sqrt(2), 2, math.sqrt(2))
+        t10_test = classify_triangle(2, math.sqrt(2), math.sqrt(2))
+        t11_test = classify_triangle(math.sqrt(8), math.sqrt(8), 4)
         self.assertTrue(
-            t8 == t9 == t10 == t11 == 'this triangle is isosceles and it is also a right triangle')
+            t8_test == t9_test == t10_test == t11_test
+            == 'this triangle is isosceles and it is also a right triangle')
 
         t12 = classify_triangle(2, 2, 5)
         t29 = classify_triangle(2, 5, 2)
