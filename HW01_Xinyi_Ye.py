@@ -12,17 +12,17 @@ def classify_triangle(a, b, c):
     and whether it is right triangle as well
     """
 
+    # if all the three lengths of triangle are numbers.
     if all([isinstance(a, (int, float)), isinstance(b, (int, float)), isinstance(c, (int, float))]):
-        """ if all the three lengths of triangle are numbers.""" 
         line = [a, b, c]
         line.sort()
 
+        # if the length number <= 0
         if any([a <= 0, b <= 0, c <= 0]):
-            """ if the length number <= 0"""
             result = 'Error'
-
+        
+        # if the sum of any two sides is greater than the third side
         elif line[0] + line[1] > line[2]:
-            """ if the sum of any two sides is greater than the third side"""
             count = defaultdict(int)
             for m in line:
                 count[m] += 1
@@ -43,11 +43,11 @@ def classify_triangle(a, b, c):
                 result1 = ' and it is not a right triangle'
             result = result0 + result1
 
+        # if the sum of any two sides is not greater that the third side
         else:
-            """ if the sum of any two sides is not greater that the third side"""
             result = 'it can not be a triangle'
         return result
     
+    # if the three lengths of triangle are not all numbers
     else:
-        """ if the three lengths of triangle are not all numbers"""
         return 'Error'
