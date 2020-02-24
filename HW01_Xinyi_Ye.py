@@ -1,5 +1,5 @@
 """
-HW01: triangle classification 
+HW01: triangle classification
 Author: Xinyi Ye
 Date: 01/27/2020
 """
@@ -7,8 +7,8 @@ from collections import defaultdict
 
 
 def classify_triangle(a, b, c):
-    """ classify_triangle() function: 
-    return string to specify whether this triangle is is scalene, isosceles, or equilateral, 
+    """ classify_triangle() function:
+    return string to specify whether this triangle is is scalene, isosceles, or equilateral,
     and whether it is right triangle as well
     """
 
@@ -20,7 +20,6 @@ def classify_triangle(a, b, c):
         # if the length number <= 0
         if any([a <= 0, b <= 0, c <= 0]):
             result = 'Error'
-        
         # if the sum of any two sides is greater than the third side
         elif line[0] + line[1] > line[2]:
             count = defaultdict(int)
@@ -47,7 +46,6 @@ def classify_triangle(a, b, c):
         else:
             result = 'it can not be a triangle'
         return result
-    
     # if the three lengths of triangle are not all numbers
     else:
         return 'Error'
