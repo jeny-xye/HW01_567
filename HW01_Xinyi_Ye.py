@@ -6,29 +6,30 @@ Date: 01/27/2020
 from collections import defaultdict
 
 
-def classify_triangle(a, b, c):
+def classify_triangle(a_side, b_side, c_side):
     """ classify_triangle() function:
     return string to specify whether this triangle is is scalene, isosceles, or equilateral,
     and whether it is right triangle as well
     """
 
     # if all the three lengths of triangle are numbers.
-    if all([isinstance(a, (int, float)), isinstance(b, (int, float)), isinstance(c, (int, float))]):
-        line = [a, b, c]
+    if all([isinstance(a_side, (int, float)),
+            isinstance(b_side, (int, float)), isinstance(c_side, (int, float))]):
+        line = [a_side, b_side, c_side]
         line.sort()
 
         # if the length number <= 0
-        if any([a <= 0, b <= 0, c <= 0]):
+        if any([a_side <= 0, b_side <= 0, c_side <= 0]):
             result = 'Error'
         # if the sum of any two sides is greater than the third side
         elif line[0] + line[1] > line[2]:
             count = defaultdict(int)
-            for m in line:
-                count[m] += 1
-            m = sorted(count.items(), key=lambda d: d[1], reverse=True)
-            if m[0][1] == 1:
+            for m_num in line:
+                count[m_num] += 1
+            m_num = sorted(count.items(), key=lambda d: d[1], reverse=True)
+            if m_num[0][1] == 1:
                 result0 = 'this triangle is scalene'
-            elif m[0][1] == 2:
+            elif m_num[0][1] == 2:
                 result0 = 'this triangle is isosceles'
             else:
                 result0 = 'this triangle is equilateral'

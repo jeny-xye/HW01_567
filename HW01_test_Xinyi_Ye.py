@@ -3,7 +3,7 @@ HW01_test: Testing triangle classification HW01
 Author: Xinyi Ye
 Date: 01/27/2020
 """
-from HW01_Xinyi_Ye import classify_triangle
+from hw01_xinyi_ye import classify_triangle
 import unittest
 import math
 
